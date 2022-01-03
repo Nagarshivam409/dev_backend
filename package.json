@@ -1,14 +1,10 @@
 {
   "name": "dev_connector",
   "version": "1.0.0",
-  "description": "",
+  "description": "node app",
   "main": "server.js",
-  "engines": {
-    "node": "12.13.0"
-  },
   "scripts": {
-    "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "start": "node server.js"
   },
   "author": "Abhishek Tiwari",
   "license": "ISC",
