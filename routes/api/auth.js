@@ -64,7 +64,7 @@ router.post(
         },
       };
 
-      console.log(email, password, payload)
+
       jwt.sign(
         payload,
         config.get("JWT_SECRET"),
