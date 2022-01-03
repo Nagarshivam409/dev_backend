@@ -9,7 +9,7 @@ const { check, validationResult } = require("express-validator");
 // bring in normalize to give us a proper url, regardless of what user entered
 const normalize = require("normalize-url");
 const request = require("request");
-const config = require("config");
+
 
 //@ router    GET api/profile/me
 // @desc     login user profile
@@ -301,11 +301,10 @@ router.delete("/education/:edu_id", isAuth, async (req, res) => {
 router.get("/github/:username", (req, res) => {
   try {
     const options = {
-      uri: `https://api.github.com/users/${
-        req.params.username
-      }/repos?per_page=5&
-      sort=created:asc&client_id=${config.get("githubclient_id")}
-      &client_secret=${config.get("githubsecret")}`,
+      uri: `https://api.github.com/users/${req.params.username
+        }/repos?per_page=5&
+      sort=created:asc&client_id=${process.env.githubclient_id}
+      &client_secret=${process.env.githubsecret}`,
       method: "GET",
       headers: { "user-agent": "nodejs" },
     };
