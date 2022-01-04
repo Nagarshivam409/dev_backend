@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "12.13.0"
+    "node": "12.13.0",
+    "npm": "8.1.2"
   },
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "heroku-postbuild": "npm run build"
   },
   "author": "Abhishek Tiwari",

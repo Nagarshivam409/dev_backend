@@ -9,12 +9,17 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 
 
-var corsOptions = {
-  origin: process.env.ALLOW_CLIENT,
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+    allowedHeaders: "*",
+    credentials: true,
+  })
+);
 
-app.use(cors(corsOptions));
+
+
 
 mongoose.connect(
   process.env.mongoURI,
